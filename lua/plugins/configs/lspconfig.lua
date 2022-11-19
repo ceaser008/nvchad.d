@@ -72,6 +72,14 @@ lspconfig.tsserver.setup {
   },
 }
 
+-- js/ts server
+lspconfig.pyright.setup {
+  server = {
+    capabilities = M.capabilities,
+    on_attach = M.on_attach,
+  },
+}
+
 -- c/cpp
 lspconfig.clangd.setup {
   server = {
