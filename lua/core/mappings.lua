@@ -20,7 +20,7 @@ M.general = {
   },
 
   n = {
-    -- basics
+    [";"] = { ":", "command mode", opts = { nowait = true } }, -- basics
     ["<leader>nh"] = { ":nohl<CR>", "remove highlight" },
     -- tab operations
     ["<leader>x"] = { ":close", "close tab" },
@@ -144,7 +144,9 @@ M.lspconfig = {
 
     ["fm"] = {
       function()
-        vim.lsp.buf.formatting()
+        -- print "fuck formatting"
+        vim.cmd "au BufWritePre <buffer> lua vim.lsp.buf.format()"
+        -- vim.lsp.buf.format()
       end,
       "format current buffer",
     },

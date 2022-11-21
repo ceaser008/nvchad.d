@@ -96,6 +96,7 @@ lspconfig.cssls.setup {
   },
 }
 
+-- html language server
 lspconfig.html.setup {
   server = {
     capabilities = M.capabilities,

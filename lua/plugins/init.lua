@@ -115,10 +115,10 @@ local plugins = {
   },
 
   ["jose-elias-alvarez/null-ls.nvim"] = {
-      after = "nvim-lspconfig",
-      config = function()
-         require "custom.null"
-      end,
+    after = "nvim-lspconfig",
+    config = function()
+      require "custom.null"
+    end,
   },
 
   -- load luasnips + cmp related in insert mode only
@@ -157,15 +157,13 @@ local plugins = {
     end,
   },
 
-["goolord/alpha-nvim"] = {
+  ["goolord/alpha-nvim"] = {
     after = "base46",
     disable = false,
-    config = function ()
-      require("plugins.configs.alpha")
+    config = function()
+      require "plugins.configs.alpha"
     end,
-    setup = function ()
-      
-    end,
+    setup = function() end,
   },
 
   ["numToStr/Comment.nvim"] = {
@@ -219,7 +217,7 @@ local plugins = {
   --    require"custom.dashboard-nvim"
   --   end,
   --   setup = function ()
-  --     
+  --
   --   end
   -- },
 }

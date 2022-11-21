@@ -1,6 +1,7 @@
 local present, wk = pcall(require, "which-key")
 
 if not present then
+  print "whichkey error"
   return
 end
 
