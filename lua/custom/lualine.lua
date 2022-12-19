@@ -1,0 +1,6 @@
+-- local present, lualine = pcall(require, "lualine")
+--
+-- if not present then
+--   print "lualine error"
+--   return
+-- end

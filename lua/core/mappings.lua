@@ -8,6 +8,7 @@ local M = {}
 
 M.general = {
   i = {
+    ["<C-/>"] = { 'require("Comment.api").toggle.linewise.current()', "end of line" },
     -- go to  beginning and end
     ["<C-b>"] = { "<ESC>^i", "beginning of line" },
     ["<C-e>"] = { "<End>", "end of line" },
@@ -142,11 +143,11 @@ M.lspconfig = {
 
   n = {
 
-    ["fm"] = {
+    ["ff"] = {
       function()
         -- print "fuck formatting"
-        vim.cmd "au BufWritePre <buffer> lua vim.lsp.buf.format()"
-        -- vim.lsp.buf.format()
+        -- vim.cmd "au BufWritePre <buffer> lua vim.lsp.buf.format()"
+        vim.lsp.buf.format()
       end,
       "format current buffer",
     },

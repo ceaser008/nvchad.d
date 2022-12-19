@@ -1,6 +1,7 @@
 local present, nvimtree = pcall(require, "nvim-tree")
 
 if not present then
+  print "error in nvimtree"
   return
 end
 
@@ -27,6 +28,11 @@ local options = {
     side = "left",
     width = 25,
     hide_root_folder = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
+    },
   },
   git = {
     enable = false,

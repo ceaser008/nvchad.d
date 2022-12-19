@@ -33,6 +33,7 @@ end
 local options = {
   window = {
     completion = {
+      autocompletion = true,
       border = border "CmpBorder",
       winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
     },

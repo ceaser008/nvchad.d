@@ -98,6 +98,7 @@ lspconfig.cssls.setup {
 
 -- html language server
 lspconfig.html.setup {
+  filetypes = { "html", "php" },
   server = {
     capabilities = M.capabilities,
     on_attach = M.on_attach,

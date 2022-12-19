@@ -12,7 +12,7 @@ local sources = {
   -- webdev stuff
   b.formatting.deno_fmt,
   b.formatting.usort,
-  b.formatting.prettierd.with { filetypes = { "html", "js", "css" } },
+  b.formatting.prettierd.with { filetypes = { "html", "js", "css", "htmlx" } },
   -- b.formatting.prettier,
   b.formatting.clang_format,
 
@@ -31,23 +31,23 @@ local sources = {
     end,
   },
 }
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-local on_attach = function(client, bufnr)
-  if client.supports_method "textDocument/formatting" then
-    vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = augroup,
-      buffer = bufnr,
-      callback = function()
-        -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-        vim.lsp.buf.format()
-      end,
-    })
-  end
-end
+-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+-- local on_attach = function(client, bufnr)
+--   if client.supports_method "textDocument/formatting" then
+--     vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+--     vim.api.nvim_create_autocmd("BufWritePre", {
+--       group = augroup,
+--       buffer = bufnr,
+--       callback = function()
+--         -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+--         vim.lsp.buf.format()
+--       end,
+--     })
+--   end
+-- end
 
 null_ls.setup {
   debug = true,
   sources = sources,
-  on_attach = on_attach,
+  -- on_attach = on_attach,
 }

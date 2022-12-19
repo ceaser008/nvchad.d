@@ -134,7 +134,13 @@ local plugins = {
       require "plugins.configs.cmp"
     end,
   },
-
+--  ["tzachar/cmp-tabnine"] = {
+ --   after = "nvim-cmp",
+  --  run = "./install.sh",
+   -- config = function()
+      -- require "custom.plugins.configs.tabnine"
+   -- end,
+ -- },
   ["L3MON4D3/LuaSnip"] = {
     wants = "friendly-snippets",
     after = "nvim-cmp",
@@ -165,6 +171,13 @@ local plugins = {
     end,
     setup = function() end,
   },
+  -- ["nvim-lualine/lualine.nvim"] = {
+  --   after = "base46",
+  --   config = function ()
+  --     require "custom.lualine"
+  --   end,
+  --   setup = function () end,
+  -- }
 
   ["numToStr/Comment.nvim"] = {
     module = "Comment",
